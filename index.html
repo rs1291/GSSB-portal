@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GSSB School Portal</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #0055a5;
+            --bg: #f4f6f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: #222;
+        }
+
+        /* ===== Header ===== */
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .logo {
+            height: 55px;
+            width: auto;
+            border-radius: 6px;
+            background: #fff;
+            padding: 4px;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            background: var(--secondary);
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Content ===== */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 25px auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .two-col>div {
+            flex: 1 1 250px;
+        }
+
+        img.hero {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .arabic {
+            direction: rtl;
+            text-align: right;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            margin-top: 10px;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 14px;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>GSSB School Portal</h1>
+            <p>Grades 7–12 | Excellence in Learning | بوابة مدرسة GSSB للصفوف ٧–١٢</p>
+        </div>
+        <!-- 🏫 Logo on the right -->
+        <img src="images/logo.png" alt="GSSB Logo" class="logo">
+    </header>
+
+    <nav>
+        <a href="index.html">Home / الرئيسية</a>
+        <a href="login.html">Login / تسجيل الدخول</a>
+        <a href="#about">About GSSB</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="about" class="card">
+            <h2>About GSSB / تعريف بالمدرسة</h2>
+            <div class="two-col">
+                <div>
+                    <p>
+                        <strong>GSSB</strong> is a modern secondary school serving students from
+                        grade 7 to grade 12. Our mission is to provide high–quality education,
+                        build strong character, and prepare students for university and future careers.
+                    </p>
+                    <p class="arabic">
+                        <strong>مدرسة GSSB</strong> هي مدرسة ثانوية حديثة تستقبل الطلبة من الصف السابع
+                        إلى الصف الثاني عشر. رسالتنا هي تقديم تعليم عالي الجودة، وبناء شخصية متوازنة،
+                        وإعداد الطلبة للجامعة وسوق العمل.
+                    </p>
+                </div>
+                <div>
+                    <img src="images/school-building.jpg" alt="GSSB School Building" class="hero">
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Our Mission & Vision / رسالتنا ورؤيتنا</h2>
+            <div class="two-col">
+                <div>
+                    <h3>Mission</h3>
+                    <p>To inspire every student to reach their full potential through
+                        engaging lessons, supportive teachers, and a safe environment.</p>
+                    <h3>Vision</h3>
+                    <p>To be a leading school in academic excellence, innovation, and community service.</p>
+                </div>
+                <div class="arabic">
+                    <h3>رسالتنا</h3>
+                    <p>إلهام كل طالب للوصول إلى أقصى إمكاناته من خلال دروس تفاعلية،
+                        ومعلمين داعمين، وبيئة مدرسية آمنة.</p>
+                    <h3>رؤيتنا</h3>
+                    <p>أن نكون من المدارس الرائدة في التفوق الأكاديمي والابتكار وخدمة المجتمع.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="contact">
+            <h2>Contact Us / تواصل معنا</h2>
+            <div class="two-col">
+                <div>
+                    <p>
+                        Address: Baghdad, Iraq<br>
+                        Phone: +964 770 000 0000<br>
+                        Email: info@gssb.edu.iq
+                    </p>
+                </div>
+                <div class="arabic">
+                    <p>
+                        العنوان: بغداد، العراق<br>
+                        الهاتف: ‎+964 770 000 0000‎<br>
+                        البريد الإلكتروني: info@gssb.edu.iq
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2025 GSSB School – All Rights Reserved | جميع الحقوق محفوظة
+    </footer>
+
+</body>
+
+</html>

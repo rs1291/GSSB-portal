@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+        }
+
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 18px 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            margin-top: 15px;
+            background: #003366;
+            color: #fff;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .announcement {
+            border-left: 4px solid #003366;
+            padding-left: 10px;
+            background: #fafbff;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Teacher Dashboard / لوحة المعلم</h1>
+    </header>
+    <div class="container">
+        <div class="card">
+            <h3>Create Announcement / إنشاء تبليغ</h3>
+            <label>Grade / الصف</label>
+            <select id="grade">
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <label>Title / العنوان</label>
+            <input id="title">
+            <label>Details / التفاصيل</label>
+            <textarea id="msg" rows="4"></textarea>
+            <button onclick="post()">Preview</button>
+        </div>
+
+        <div class="card">
+            <h3>Preview</h3>
+            <div id="preview"></div>
+        </div>
+    </div>
+
+    <script>
+        function post() {
+            const g = document.getElementById('grade').value;
+            const t = document.getElementById('title').value.trim();
+            const m = document.getElementById('msg').value.trim();
+            if (!t || !m) { alert('Fill title and message'); return; }
+            const box = document.createElement('div');
+            box.className = 'announcement';
+            box.innerHTML = `<strong>Grade ${g}:</strong> ${t}<br>${m}`;
+            document.getElementById('preview').prepend(box);
+            document.getElementById('title').value = "";
+            document.getElementById('msg').value = "";
+        }
+    </script>
+</body>
+
+</html>
